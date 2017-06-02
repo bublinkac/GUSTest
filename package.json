@@ -1,0 +1,22 @@
+{
+  "name": "GUSTest",
+  "version": "0.0.0",
+  "description": "Guidelines for Siebel Test",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "jade": "latest",
+    "mongodb": "^2.2.27",
+    "socket.io": "latest",
+    "winston": "^2.3.1",
+    "winston-loggly-bulk": "^1.4.2"
+  },
+  "author": "developer",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "dev": "pm2 start app.js"
+  }
+}
