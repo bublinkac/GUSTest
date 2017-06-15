@@ -15,9 +15,14 @@ app.set('view engine', 'jade')
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 
-
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({extended: true}))
+var urlencodedParser =app.use(bodyParser.urlencoded({extended: true}))
+
+// app.post('/login', function(req, res) {
+//   var usrname = req.body.username;
+// 	//var pass = req.body.password;
+// 	console.log('app' + req.body.user);
+//  });
 
 /// catch 404 and forwarding to error handler
 /*app.use(function(req, res, next) {

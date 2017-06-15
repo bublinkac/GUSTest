@@ -5,9 +5,11 @@ block content
      form(name="login", method="post",action="/login")
         div#userdiv
             label(for='user') user: 
-                input(id='user',type='text',value='',placeholder='user',name='user')
+                input(id='user',type='text',value='',placeholder='user',name='user',required)
         div#passworddiv
             label(for='password') password: 
-                input(id='password',type='password',value='',placeholder='password',name='password')
+                input(id='password',type='password',value='',placeholder='password',name='password',required)
         div 
             input(type='submit',value='Login')
+        div
+            label()&attributes(labelvisible === true ? {'style': 'visibility:hidden'} : {'style': 'visibility:visible'}) Wrong login!

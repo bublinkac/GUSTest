@@ -1,0 +1,16 @@
+//extends layout
+
+block content
+ h1 Pick your challenge
+ -var challengelist = challenges
+ div
+   table.table.table-hover
+    thead
+      tr: th Challenges
+    tbody
+      each challenge in challenges
+        tr
+          td
+           a(href="/rtfm")
+            input#Button(type="button", value=challenge.name)
+    
