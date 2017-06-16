@@ -1,9 +1,10 @@
 //extends layout
-
+title Pick your challenge
 block content
  h1 Pick your challenge
  -var challengelist = challenges
  div
+  form(name="pickchallenge", method="post",action="/challenge")
    table.table.table-hover
     thead
       tr: th Challenges
@@ -11,6 +12,7 @@ block content
       each challenge in challenges
         tr
           td
-           a(href="/rtfm")
+           input(id='challenge', type='submit',value=challenge.name, name='challenge')
+           //a(href="/rtfm/?challenge="+challenge.name)
             input#Button(type="button", value=challenge.name)
     

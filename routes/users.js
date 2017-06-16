@@ -38,7 +38,7 @@ router.post('/login', function(req, res) {
 		if(user.islogged()){
 			console.log('logged');
 			//Globals.logged = true;
-			//Globals.username = usrname;
+			Globals.username = usrname;
 			Globals.User = user;
 			res.redirect("/challenge")
 		}

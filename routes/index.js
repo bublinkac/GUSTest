@@ -38,6 +38,7 @@ router.get('/logout', function(req, res) {
 });
 
 router.get('/challenge', challenges);
+router.post('/challenge', challenges);
 
 router.get('/rtfm', rtfm);
 

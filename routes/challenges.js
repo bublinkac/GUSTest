@@ -9,8 +9,8 @@ var User = require('../models/user');
 
 /* GET home page. */
 router.get('/challenge', function(req, res) {   
-    var logged = Globals.User.islogged(); 
-    if(logged==true){
+    //var logged = Globals.User.islogged(); 
+    if(Globals.User && Globals.User.islogged()){
         Challenge.find(function (err, challenge) {  
             if (err) {
                 // Note that this error doesn't mean nothing was found,
@@ -26,6 +26,26 @@ router.get('/challenge', function(req, res) {
     else{
         res.write('<html><body>You are not autorized to view this page!</body></html>');
     }
+});
+
+router.post('/challenge', function(req, res) {
+    var challenge = req.body.challenge;
+    Challenge.findOne({ 'name': challenge }, function (err, ch){
+        if (err) {
+            console.log('error occured: ' + err);
+            return handleError(err);
+        }
+        else{
+            if(ch){
+                Globals.CurrentChallenge = ch;
+                res.redirect('/rtfm');
+            }
+            else{
+                console.log('challenge %s not found' + challenge);
+            }
+        }
+    });
+    var a=0;
 });
 
 module.exports = router;

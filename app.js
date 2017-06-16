@@ -1,5 +1,6 @@
 var express = require('express')
 var mongoose = require('mongoose');
+var Globals = require('./models/globals');
 const bodyParser= require('body-parser')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
@@ -45,6 +46,20 @@ mongoose.connect('mongodb://localhost:27017/test', (err, database) => {
 	    console.log('listening on 3000 mongoose')
 	  })
 	});
+
+//DEBUG ONLY!!!!
+var User = require('./models/user');
+var u = new User({
+  username: "mike1",
+  password: "p" 
+});
+u.login(function(user){
+  if(user.islogged()){
+    console.log('logged');
+    Globals.User = user;
+  }
+});
+//DEBUG ONLY!!!
 
 /*MongoClient.connect('mongodb://localhost:27017/test', (err, database) => {
   if (err) return console.log(err)
