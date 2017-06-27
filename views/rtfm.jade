@@ -2,5 +2,11 @@ title RTFM
 block content
     h1 RTFM
     div            
-        a(href=challenge.linktodocu) #{challenge.name}
-                
+        a(href=challenge.linktodocu, target="_blank") #{challenge.name}
+    br
+    br
+    br
+    div
+     form(name="start", method="post",action="/question")
+        div 
+            input(type='submit',value='Login')

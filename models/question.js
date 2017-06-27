@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 //create a schema
 var questionSchema = new Schema({
     challengeid: { type: Schema.Types.ObjectId, required: true },
+    //challengeid: { type: String, required: true },
     question: { type: String, required: true },
     answers:[
         {
