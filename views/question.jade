@@ -1,0 +1,16 @@
+title Question 
+
+block content
+    h1 #{question.question}
+    br
+    br
+    br
+    div
+     form(name="start", method="post",action="/question")
+        div 
+            input(type='submit',value='Next')
+            script.                
+                var a = #{num};
+                a++;
+                //alert(a);
+            input(type="hidden" name="num" value=a)

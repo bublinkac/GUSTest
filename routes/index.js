@@ -8,6 +8,7 @@ var users = require('./users');
 var challenges = require('./challenges');
 var Globals = require('../models/globals');
 var rtfm = require('./rtfm');
+var questions = require('./questions');
 
 
 /* GET home page. */
@@ -41,6 +42,10 @@ router.get('/challenge', challenges);
 router.post('/challenge', challenges);
 
 router.get('/rtfm', rtfm);
+router.post('/rtfm', rtfm);
+
+router.get('/question', questions);
+router.post('/question',questions);
 
 exports.index = function(req, res){
   res.render('login', { title: 'GuS' });
